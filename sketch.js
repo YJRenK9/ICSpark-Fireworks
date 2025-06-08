@@ -293,6 +293,7 @@ var fw2 = -1;
 //   launchFirework();
 // }
 
+// touchStarted is like mouseClicked but it's also compatible with mobile devices
 function touchStarted() {
   launchFirework();
 }
