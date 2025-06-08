@@ -17,5 +17,5 @@ Stretch Goals:
 - Minecraft characters
 - Minecraft items as firework projectiles
 - Mini game where the player shoots enemies with fireworks
-- ASCII Among US
+- ASCII Among Us
 - ASCII Rick Roll
