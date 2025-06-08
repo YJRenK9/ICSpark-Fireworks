@@ -202,7 +202,7 @@ function draw() {
     yDirection[2] *= -1;
   }
 
-  if (navigator.userAgent.toLowerCase().includes("mobile")) {
+  if (height > width) {
     // show mobile buttons if canvas is using mobile resolution
     mobileButtons.class("mobile-buttons");
 
@@ -260,7 +260,10 @@ function draw() {
     
 
     textSize(32);
-    text("Press r to toggle Roy G Biv Mode, m to show/hide Motto, or a to toggle Auto Mode", width / 2, height / 1.0625);
+    if (!navigator.userAgent.toLowerCase().includes("mobile")) {
+      text("Press r to toggle Roy G Biv Mode, m to show/hide Motto, or a to toggle Auto Mode", width / 2, height / 1.0625);
+    }
+    
 
   }
   
