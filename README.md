@@ -8,7 +8,7 @@ Controls:
 - toggle auto mode (a)
 - Add another auto firework instance (shift + a)
 
-Stretch Goals:
+Stretch Goals (Plans for ICSpark's future Anniversaries):
 - ASCII title
 - option to display fireworks as words instead of ASCII characters
 - ASCII rocket ship
