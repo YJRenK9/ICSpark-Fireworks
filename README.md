@@ -9,7 +9,7 @@ Controls:
 - Add another auto firework instance (shift + a)
 
 Stretch Goals (Plans for ICSpark's future Anniversaries):
-- ASCII title
+- ASCII title (will do for 7th anniversary)
 - option to display fireworks as words instead of ASCII characters (will do for 7th anniversary)
 - ASCII rocket ship
 - ASCII planet
