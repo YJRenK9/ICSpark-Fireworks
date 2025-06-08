@@ -4,6 +4,7 @@ html, body {
 }
 canvas {
   display: block;
+  touch-action: none; /* used to enable using canvas on mobile devices */
 }
 
 .mobile-button button {
@@ -11,13 +12,15 @@ canvas {
   justify-content: center;
   align-items: center;
   text-align: center;
+  /* opacity: 1;
+  transition: opacity 0.3 ease; */
 }
 
 button {
   width: 108px;
   height: 108px;
   font-size: 24px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   /* padding: 16px 8px; */
 }
 
@@ -33,6 +36,31 @@ button:active {
 .off {
   font-style: bold;
   color: red;
+}
+
+@keyframes animateOpacity {
+  from { filter: opacity(1); }
+  to { filter: opacity(0.3); }
+}
+
+@keyframes animateOpacity2 {
+  from { filter: opacity(0.3); }
+  to { filter: opacity(1); }
+}
+
+.semi-transparent {
+  /* opacity: 0.3; */
+  animation-name: animateOpacity;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.semi-opaque {
+  /* opacity: 1; */
+  animation-name: animateOpacity2;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  /* transition: opacity 0.3 ease; */
 }
 
 .hide-content {

@@ -205,6 +205,13 @@ function draw() {
   if (height > width) {
     // show mobile buttons if canvas is using mobile resolution
     mobileButtons.class("mobile-buttons");
+
+    if (fireworks.every(fw => fw.isMovingUp === false)) {
+      mobileButtons.class("semi-opaque");
+    } else {
+      mobileButtons.class("semi-transparent");
+    }
+
   } else {
     // hide mobile buttons if canvas is using desktop resolution
     mobileButtons.class("hide-content");
@@ -424,3 +431,8 @@ function rainbowTransition() {
   
   //fill(are, gee, bee);
 }
+
+// used to let users launch fireworks via tapping
+// document.ontouchmove = function(event) {
+//   event.preventDefault();
+// }
