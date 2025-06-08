@@ -17,5 +17,9 @@ Stretch Goals:
 - Minecraft characters
 - Minecraft items as firework projectiles
 - Mini game where the player shoots enemies with fireworks
+- More CCM and CADRE references
+- Japanese/Anime references
+- Data Science and Cybersecurity references
+- ASCII Josh Hutcherson
 - ASCII Among Us
 - ASCII Rick Roll
