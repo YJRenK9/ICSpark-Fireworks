@@ -10,6 +10,7 @@ Controls:
 
 Stretch Goals:
 - ASCII title
+- option to display fireworks as words instead of ASCII characters
 - ASCII rocket ship
 - ASCII planet
 - ASCII shark
