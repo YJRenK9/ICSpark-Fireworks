@@ -18,7 +18,7 @@ Stretch Goals (Plans for ICSpark's future Anniversaries):
 - Minecraft characters
 - Minecraft items as firework projectiles
 - Mini game where the player shoots enemies with fireworks
-- More CCM and CADRE references
+- More CCM, CADRE, and SIGGRAPH references
 - Japanese/Anime references
 - SWITCH references 
 - Data Science, Machine Learning, and Cybersecurity references
