@@ -20,7 +20,7 @@ Stretch Goals (Plans for ICSpark's future Anniversaries):
 - Mini game where the player shoots enemies with fireworks
 - More CCM, CADRE, and SIGGRAPH references
 - Japanese/Anime references
-- SWITCH references 
+- ICS and SWITCH references 
 - Data Science, Machine Learning, and Cybersecurity references
 - ASCII Josh Hutcherson
 - ASCII Among Us
