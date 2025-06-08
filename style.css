@@ -1,0 +1,40 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+.mobile-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+button {
+  width: 108px;
+  height: 108px;
+  font-size: 24px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  /* padding: 16px 8px; */
+}
+
+button:active {
+  background-color: aliceblue;
+}
+
+.on {
+  font-style: bold;
+  color: green;
+}
+
+.off {
+  font-style: bold;
+  color: red;
+}
+
+.hide-content {
+  display: none;
+}
