@@ -26,4 +26,3 @@ Stretch Goals (Plans for ICSpark's future Anniversaries):
 - ASCII Among Us
 - ASCII Rick Roll
 - website/text-based adventure
-- whatever the mentors and students like these days
