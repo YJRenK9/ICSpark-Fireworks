@@ -433,6 +433,6 @@ function rainbowTransition() {
 }
 
 // used to let users launch fireworks via tapping
-document.ontouchmove = function(event) {
+document.addEventListener("touchmove", (event) => {
   event.preventDefault();
-}
+}, { passive: false }); // This allows preventDefault()
