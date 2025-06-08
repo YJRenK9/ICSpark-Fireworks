@@ -23,4 +23,5 @@ Stretch Goals:
 - ASCII Josh Hutcherson
 - ASCII Among Us
 - ASCII Rick Roll
+- website/text-based adventure
 - whatever the mentors and students like these days
