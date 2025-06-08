@@ -10,7 +10,7 @@ Controls:
 
 Stretch Goals (Plans for ICSpark's future Anniversaries):
 - ASCII title
-- option to display fireworks as words instead of ASCII characters
+- option to display fireworks as words instead of ASCII characters (might do for 6th anniversary)
 - ASCII rocket ship
 - ASCII planet
 - ASCII shark
