@@ -1,6 +1,8 @@
 # ICSpark Fireworks
 Creative coding project that launches fireworks to celebrate ICSpark's Anniversary.  Besides the theme being ICSpark, it's also whatever the mentor and students like these days.  Feel free to let me know if you have any more ideas for this project :)
 
+Should work on Smartphones and Computers.
+
 Controls:
 - launch a firework (left mouse click)
 - toggle Roy G. Biv mode (r)
