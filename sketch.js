@@ -202,7 +202,7 @@ function draw() {
     yDirection[2] *= -1;
   }
 
-  if (height > width) {
+  if (navigator.userAgent.toLowerCase().includes("mobile")) {
     // show mobile buttons if canvas is using mobile resolution
     mobileButtons.class("mobile-buttons");
 
