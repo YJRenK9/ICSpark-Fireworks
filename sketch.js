@@ -289,7 +289,15 @@ function draw() {
 
 var fw2 = -1;
 
-function mouseClicked() {
+// function mouseClicked() {
+//   launchFirework();
+// }
+
+function touchStarted() {
+  launchFirework();
+}
+
+function launchFirework() {
   let fw = int(random(60));
 
   // if it selects the same firework, change index until it selects a different one 
@@ -308,10 +316,8 @@ function mouseClicked() {
     // enables firework to move up
     fireworks[fw].isMovingUp = true;
   }
-  //fireworks[fw].isMovingUp = true;
-  //console.log(fireworks[fw].isMovingUp);
-  //fireworks[fw].move();
 }
+
 var fw3 = -1;
 var autoInterval;
 var autoInterval2;
@@ -433,6 +439,6 @@ function rainbowTransition() {
 }
 
 // used to let users launch fireworks via tapping
-document.addEventListener("touchmove", (event) => {
-  event.preventDefault();
-}, { passive: false }); // This allows preventDefault()
+// document.addEventListener("touchmove", (event) => {
+//   event.preventDefault();
+// }, { passive: false }); // This allows preventDefault()
