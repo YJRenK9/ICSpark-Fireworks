@@ -287,6 +287,11 @@ function draw() {
   // text("______", textX + 200, height / 2.6);
 }
 
+function windowResized() {
+  document.body.style.zoom = "100%";
+  resizeCanvas(windowWidth, windowHeight);
+}
+
 var fw2 = -1;
 
 // function mouseClicked() {
