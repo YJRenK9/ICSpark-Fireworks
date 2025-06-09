@@ -20,6 +20,7 @@ Stretch Goals (Plans for ICSpark's future Anniversaries):
 - Minecraft characters
 - Minecraft items as firework projectiles
 - Mini game where the player shoots enemies with fireworks
+- Winston and Baby Sloth
 - More CCM, CADRE, and SIGGRAPH references
 - Japanese/Anime references
 - ICS and SWITCH references 
