@@ -1,31 +1,32 @@
 var textX;
-var ascii_string = 'X2@adp#r9^kI!CQp&7S$WaT6';
-var ascii_char;
-var posX;
-var posY;
 
+// modes
 var isHidden = false;
 var isAuto = false;
 var isRainbow = false; 
 
+// used to hide the motto by making it invisible (default is visible b/c value is 255)
 var alphaText = 255;
-let alphaMap;
+// used to show/hide list of controls via mouse position
+var alphaMap;
 
+// variables used for ease animation and its delay for the list of controls
 var startTime;
 var initiateAlpha = false;
 var initiateAlphaDelay = false;
 
-var asciiArr = [];
 var xPosArr;
 var yPosArr;
-var direction = [-2, 2];
+var direction = [-2, 2]; // movement speed for the motto
 var xDirection;
 var yDirection;
 
+// array used to store number of fireworks that can be launched
 var fireworks = [];
-var indecies = [];
+
 var roygbiv = [[255, 0, 0], [255, 165, 0], [255, 255, 0], [0, 255, 0], [0, 0, 255], [75, 0, 130], [238, 130, 238]];
 
+// DOM variables used to make the project mobile-friendly
 var mobileButtons, rainbowBtn, toggleMotto, toggleAuto;
 
 function setup() {
@@ -33,38 +34,32 @@ function setup() {
     // .position((windowWidth - width) / 2, ((windowHeight - height) / 2) - (height/16));
   textAlign(CENTER, CENTER);
   textX = width / 2;
-  // posX = mouseX;
-  // posY = height + 24;
-  // ascii_char = ascii_string[int(random(ascii_string.length))];
 
+  // generate 60 fireworks
   for (let i = 0; i < 60; i++) {
-    // ascii_char = ascii_string[int(random(ascii_string.length))];
-    // asciiArr.push(ascii_char);
-    // xPosArr.push(posX);
-    // yPosArr.push(posY);
-
-    fireworks[i] = new ASCIIFireworks(mouseX, height + 24, 255, 24);
+    fireworks[i] = new ASCIIFirework(mouseX, height + 24, 255, 24);
   }
 
-  // while () {
-  //   for (let i = 0; i < 60; i++) {
-  //     indecies[i] = int(random(60));
-  //   }
-  // }
-
+  // determine the position for each text of the motto
   xPosArr = [width * 0.25, width * 0.5, width * 0.75];
   yPosArr = [height / 2, height / 2, height / 2];
+  // determine the speed for each text of the motto
   xDirection = [random(direction), random(direction), random(direction)];
   yDirection = [random(direction), random(direction), random(direction)];
 
+  // create div to store buttons 
   mobileButtons = createDiv();
+  // move the div bottom-right in the canvas
   mobileButtons.position(width / 1.15, height / 1.25);
+  // declare class to stylize the layout of the buttons
   mobileButtons.class("mobile-button");
   
+  // create mobile-friendly buttons  
   rainbowBtn = createButton("RoyG Biv OFF");
   toggleMotto = createButton("display motto ON");
   toggleAuto = createButton("auto mode OFF");
   
+  // append the buttons to the div
   mobileButtons.child(rainbowBtn);
   mobileButtons.child(toggleMotto);
   mobileButtons.child(toggleAuto);
@@ -82,23 +77,26 @@ function setup() {
 
     // added same code from keyPressed, so it can also work when the user clicks on the button 
     if (isAuto) {
-        // clear previous interval before starting a new one (ensures multiple auto modes don't happen)
-        //clearInterval(autoInterval);
 
+        // creates an auto firework instance
         autoInterval = setInterval(() => {
+          // used to get random firework in the list
           let fw = int(random(60));
 
+          // get a different firework whenever the program randomly selects one that's already moving up
           while (fireworks[fw].isMovingUp) {
             fw = int(random(60));
-            console.log("same index");
+            //console.log("same index");
           }
-          fw3 = fw;
+          //fw3 = fw;
+
           // only move firework if its stationary
           if (!fireworks[fw].isMovingUp) { 
+            // moves the firework up at a random horizontal position
             fireworks[fw].xPos = random(width);
             fireworks[fw].isMovingUp = true; 
           }
-          //fireworks[fw].isMovingUp = true;
+
         }, 1000);
 
       } else {
@@ -109,8 +107,10 @@ function setup() {
         autoIntervals = [];
     }
   });
-
+  
+  // used for delaying the ease animation for the list of controls
   startTime = millis();
+
   angleMode(DEGREES);
 } 
 
@@ -130,12 +130,14 @@ function draw() {
   // fill(255, 255, 0, a);
   // text(ascii_char, posX, posY + 24);
 
+  // draw each firework on the canvas (move and bang only happen if specified conditions are met)
   for (let i = 0; i < 60; i++) {
       fireworks[i].display();
       fireworks[i].move();
       fireworks[i].bang();
   }
 
+  /* used to change the button text to let users know which mode is ON or OFF */
   if (!isRainbow) {
     // since this is HTML text, \n doesn't work, use <br> instead
     rainbowBtn.html("RoyG Biv <br> <b class='off'>OFF</b>");
@@ -167,11 +169,9 @@ function draw() {
     fill(225, 75, 35, alphaText);
   }
   
-  //fill(255, 255, 0, 255);
+  // using arrays for each text to mode in an independent direction
   text("Coding", xPosArr[0], yPosArr[0]);
-  //fill(255, 0, 255, 255);
   text("Made", xPosArr[1], yPosArr[1]);
-  //fill(0, 255, 255, 255);
   text("Accessible", xPosArr[2], yPosArr[2]);
 
   // move each word in a random direction
@@ -206,6 +206,7 @@ function draw() {
     // show mobile buttons if canvas is using mobile resolution
     mobileButtons.class("mobile-buttons");
 
+    // make the mobile buttons semi-transparent if at least one firework launched, opaque otherwise
     if (fireworks.every(fw => fw.isMovingUp === false)) {
       mobileButtons.class("semi-opaque");
     } else {
@@ -216,30 +217,35 @@ function draw() {
     // hide mobile buttons if canvas is using desktop resolution
     mobileButtons.class("hide-content");
 
-    
-    
+    // used to display the list of controls if none of the fireworks are being launched
     if (fireworks.every(fw => fw.isMovingUp === false)) { 
       if (initiateAlphaDelay) { 
+        // create a new millis()
         startTime = millis();
+        // used to only create a new millis one time
         initiateAlphaDelay = false;
       } else {
+        // determines how far apart elapsedDelay and sta
         let elapsedDelay = millis() - startTime;
+        // do if/else after 5 seconds has passed 
         if (elapsedDelay > 5000) {
           if (alphaMap <= map(mouseY, height / 2, height, 0, 255) && mouseY > height / 2) {
+            // animate ease-in
             alphaMap += 1 * pow(3 - 1, 3) + 1;
           } else {
+            // set ease animation state to false
             initiateAlpha = false;
-            startTime = millis();
+            //startTime = millis();
           }
         }
       }
 
+      // alpha value is dependent on mouseY if ease animation isn't enabled
       if (!initiateAlpha) alphaMap = map(mouseY, height / 2, height, 0, 255);
       //initiateAlpha = false;
       
-      
     } else {
-      
+  
       //if (!initiateAlpha) alphaMap = 255;
       initiateAlpha = true;
 
@@ -251,15 +257,15 @@ function draw() {
       }
     }
 
+    // used to change the color of the controls text
     if (isRainbow) {
       fill(are, gee, bee, alphaMap);
     } else {
       fill(225, 75, 35, alphaMap);
     }
 
-    
-
     textSize(32);
+    // since mobile devices can switch to landscape resolution, only display list of controls if user is using a computer
     if (!navigator.userAgent.toLowerCase().includes("mobile")) {
       text("Press r to toggle Roy G Biv Mode, m to show/hide Motto, or a to toggle Auto Mode", width / 2, height / 1.0625);
     }
