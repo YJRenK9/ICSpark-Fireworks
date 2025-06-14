@@ -1,7 +1,7 @@
 # ICSpark Fireworks
 Creative coding project that launches fireworks to celebrate ICSpark's Anniversary.  Besides the theme being ICSpark, it's also whatever the mentor and students like these days.  Feel free to let me know if you have any more ideas for this project :)
 
-Should work on Smartphones and Computers.  It's highly recommended to use this sketch on 16:9 resolution if you're on a mobile device. 
+Should work on Smartphones and Computers.  It's recommended to use this sketch on a 9:16 resolution if you're on a mobile device. 
 
 Controls:
 - launch a firework (left mouse click)
